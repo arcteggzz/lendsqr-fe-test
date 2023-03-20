@@ -19,8 +19,15 @@
 
   This changes the body color to red at any screensize below 1200px
 */
-@mixin mediaQuery($value) {
-  @media ($value) {
+@mixin mediaQuery($max-value, $min-value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+// On screens that are 720px or less,
+@mixin mobileStyles() {
+  @media (max-width: 720px) {
     @content;
   }
 }

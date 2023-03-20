@@ -1,43 +1,86 @@
 import React, { useState, useRef } from "react";
 import styles from "./LoginPage.module.scss";
+import lendsqr_logo from "../assets/images/lendsqr_log.png";
+import login_hero from "../assets/images/login_hero.png";
+import Image from "../Components/Image";
+import { mockLogin } from "../utils/mockLogin";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const LoginPage = () => {
-  const handleSubmit = () => {
-    console.log("submit");
+  const [pwdVisible, setPwdVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/dashboard";
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const user = await mockLogin();
+    if (user.password === password && user.userName === email) {
+      localStorage.setItem("isLogin", "true");
+      navigate(from, { replace: true });
+      setEmail("");
+      setPassword("");
+    } else {
+      setErrorMessage("Invalid Username or Password. Retry.");
+    }
   };
 
   return (
     <>
-      <form className={styles.Login} action="." onSubmit={handleSubmit}>
-        <h1 className="">Welcome Back</h1>
+      <main className={styles.Login}>
+        <section className="">
+          <div className={styles.Image_Container}>
+            <img src={lendsqr_logo} alt="" />
+          </div>
+          <img src={login_hero} alt="" />
+        </section>
+        <form action="" onSubmit={handleSubmit}>
+          <header>
+            <h1>Welcome!</h1>
+            <h2>Enter details to login.</h2>
+          </header>
 
-        <label htmlFor="email" className="">
-          Email
-        </label>
-        <input
-          id="email"
-          type="email"
-          placeholder="Enter your email"
-          required
-          v-model="email"
-        />
+          <input
+            id="email"
+            type="email"
+            placeholder="Email"
+            required
+            className={styles.input_field}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-        <label htmlFor="password" className="">
-          Password
-        </label>
-        <input
-          id="password"
-          type="password"
-          placeholder="Enter your password"
-          required
-          v-model="password"
-          pattern="^.{6}$"
-        />
+          <div className={styles.input_field_container}>
+            <input
+              id="password"
+              type={pwdVisible ? "password" : "text"}
+              placeholder="Password"
+              required
+              onChange={(e) => setPassword(e.target.value)}
+            />
 
-        <button className="" type="submit">
-          Sign in
-        </button>
-      </form>
+            <p
+              onClick={() => setPwdVisible(!pwdVisible)}
+              className={styles.toggle}
+            >
+              {pwdVisible ? `SHOW` : `HIDE`}
+            </p>
+          </div>
+
+          <p>Forgot PASSWORD?</p>
+          <button className={styles.login_btn}>Log in</button>
+          {errorMessage ? (
+            <>
+              <h6>{errorMessage}</h6>
+            </>
+          ) : (
+            <></>
+          )}
+        </form>
+      </main>
     </>
   );
 };

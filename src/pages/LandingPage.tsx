@@ -10,6 +10,15 @@ const LandingPage = () => {
         <Link to={`/login`} className={styles.link}>
           Login
         </Link>
+        <Link to={`/dashboard`} className={styles.link}>
+          Dashboard
+        </Link>
+        <Link to={`/dashboard/users`} className={styles.link}>
+          users
+        </Link>
+        <Link to={`/dashboard/users/gega`} className={styles.link}>
+          UserDetails
+        </Link>
       </div>
     </>
   );
