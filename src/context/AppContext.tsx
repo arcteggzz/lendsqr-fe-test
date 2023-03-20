@@ -1,15 +1,26 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState } from "react";
 
-export const AppContext = createContext({});
+type AppContextProviderProps = {
+  children: React.ReactNode;
+};
 
-export const AppContextProvider = ({ children }: any) => {
+type AppContextType = {
+  mobileSidebarOpen: boolean;
+  setMobileSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export const AppContext = createContext<AppContextType | null>(null);
+
+export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const toggleMobileNavBar = () => {
-    setMobileSidebarOpen(!mobileSidebarOpen);
-  };
 
   return (
-    <AppContext.Provider value={{ mobileSidebarOpen, toggleMobileNavBar }}>
+    <AppContext.Provider
+      value={{
+        mobileSidebarOpen: mobileSidebarOpen,
+        setMobileSidebarOpen: setMobileSidebarOpen,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

@@ -8,21 +8,25 @@ import UsersPage from "./pages/UsersPage";
 import UserDetailsPage from "./pages/UserDetailsPage";
 import DashboardLayout from "./utils/DashboardLayout";
 
+import { AppContextProvider } from "./context/AppContext";
+
 const App = () => {
   return (
     <>
-      <Routes>
-        {/* public routes */}
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<LoginPage />} />
+      <AppContextProvider>
+        <Routes>
+          {/* public routes */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<LoginPage />} />
 
-        {/* private routes */}
-        <Route element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/dashboard/users" element={<UsersPage />} />
-          <Route path="/dashboard/users/:id" element={<UserDetailsPage />} />
-        </Route>
-      </Routes>
+          {/* private routes */}
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard/users" element={<UsersPage />} />
+            <Route path="/dashboard/users/:id" element={<UserDetailsPage />} />
+          </Route>
+        </Routes>
+      </AppContextProvider>
     </>
   );
 };

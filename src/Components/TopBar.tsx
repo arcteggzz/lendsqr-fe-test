@@ -10,14 +10,21 @@ import hamburger_open from "../assets/images/hamburger_open.png";
 import hamburger_close from "../assets/images/hamburger_close.png";
 
 const Topbar = () => {
-  // const { mobileSidebarOpen, setMobileSidebarOpen } = useContext(AppContext);
-  // console.log(context?.mobileSidebarOpen);
-  const sidebarOpen = true;
+  const appContext = useContext(AppContext);
+  const toggleSideBar = () => {
+    appContext?.setMobileSidebarOpen(!appContext.mobileSidebarOpen);
+  };
+
   return (
     <>
       <nav className={styles.nav}>
-        <div className={styles.hamburger}>
-          <img src={sidebarOpen ? hamburger_close : hamburger_open} alt="" />
+        <div className={styles.hamburger} onClick={toggleSideBar}>
+          <img
+            src={
+              appContext?.mobileSidebarOpen ? hamburger_close : hamburger_open
+            }
+            alt=""
+          />
         </div>
         <div className={styles.left_container}>
           <div className={styles.logo_burger_container}>
