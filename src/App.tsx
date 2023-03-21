@@ -7,6 +7,7 @@ import LandingPage from "./pages/LandingPage";
 import UsersPage from "./pages/UsersPage";
 import UserDetailsPage from "./pages/UserDetailsPage";
 import DashboardLayout from "./utils/DashboardLayout";
+import ComingSoonPage from "./pages/ComingSoonPage";
 
 import { AppContextProvider } from "./context/AppContext";
 
@@ -21,7 +22,8 @@ const App = () => {
 
           {/* private routes */}
           <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard" element={<ComingSoonPage />} />
+            <Route path="/dashboard/:id" element={<ComingSoonPage />} />
             <Route path="/dashboard/users" element={<UsersPage />} />
             <Route path="/dashboard/users/:id" element={<UserDetailsPage />} />
           </Route>
