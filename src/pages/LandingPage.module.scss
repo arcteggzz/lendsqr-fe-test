@@ -1,18 +1,88 @@
+@import "../assets/styles/functions.scss";
+@import "../assets/styles/colors.scss";
+
 .LandingPage {
   display: flex;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
+  padding: 0 10vw;
   justify-content: center;
   align-items: center;
-  row-gap: 32px;
+  column-gap: 32px;
+  @include mobileStyles {
+    flex-direction: column;
+    ustify-content: center;
+    align-items: center;
+    row-gap: 32px;
+    padding: 0 5vw;
+    text-align: center;
+  }
 
-  .link {
-    background-color: #7f56d9;
-    border-radius: 6px;
-    color: white;
-    font-size: 14px;
-    text-decoration: none;
-    padding: 12px 20px;
+  section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    h1 {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 72px;
+      color: $secondary;
+      @include mobileStyles {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 28px;
+      }
+
+      span {
+        color: black;
+      }
+    }
+
+    p {
+      @include mobileStyles {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+
+    .linkLogin {
+      background-color: $secondary;
+      border-radius: 16px;
+      color: white;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 25px;
+      text-decoration: none;
+      padding: 16px;
+      width: 330px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      @include mobileStyles {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        width: 100%;
+        padding: 12px;
+      }
+    }
+
+    .linkLogin:hover {
+      background-color: #6fb5b5;
+    }
+  }
+
+  img {
+    @include mobileStyles {
+      width: 70vw;
+      height: auto;
+    }
   }
 }
