@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./ComingSoonPage.module.scss";
-import coming_soon from "../assets/images/coming_soon.png";
+import coming_soon from "../../assets/images/coming_soon.png";
 
 const ComingSoonPage = () => {
   return (

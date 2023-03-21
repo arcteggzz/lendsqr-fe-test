@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import styles from "./LoginPage.module.scss";
-import lendsqr_logo from "../assets/images/lendsqr_log.png";
-import login_hero from "../assets/images/login_hero.png";
-import { mockLogin } from "../utils/mockLogin";
+import lendsqr_logo from "../../assets/images/lendsqr_log.png";
+import login_hero from "../../assets/images/login_hero.png";
+import { mockLogin } from "../../utils/mockLogin";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const LoginPage = () => {

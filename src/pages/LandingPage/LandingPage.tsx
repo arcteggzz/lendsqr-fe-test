@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./LandingPage.module.scss";
-import assessment_image from "../assets/images/assessment_image.png";
+import assessment_image from "../../assets/images/assessment_image.png";
 
 const LandingPage = () => {
   return (

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import styles from "./App.module.scss";
-import DashboardPage from "./pages/DashboardPage";
-import LoginPage from "./pages/LoginPage";
-import LandingPage from "./pages/LandingPage";
-import UsersPage from "./pages/UsersPage";
-import UserDetailsPage from "./pages/UserDetailsPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import UsersPage from "./pages/UsersPage/UsersPage";
+import UserDetailsPage from "./pages/UserDetailsPage/UserDetailsPage";
 import DashboardLayout from "./utils/DashboardLayout";
-import ComingSoonPage from "./pages/ComingSoonPage";
+import ComingSoonPage from "./pages/ComingSoonPage/ComingSoonPage";
 
 import { AppContextProvider } from "./context/AppContext";
 
