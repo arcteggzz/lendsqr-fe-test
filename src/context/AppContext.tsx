@@ -9,7 +9,8 @@ type AppContextType = {
   setMobileSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-export const AppContext = createContext<AppContextType | null>(null);
+// export const AppContext = createContext<AppContextType | null>(null);
+export const AppContext = createContext({} as AppContextType);
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);

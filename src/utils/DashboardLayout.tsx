@@ -1,3 +1,5 @@
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import Topbar from "../Components/TopBar";
 import Sidebar from "../Components/Sidebar";
@@ -7,14 +9,23 @@ const DashboardLayout = () => {
   const location = useLocation();
   const isLoggedIn = localStorage.getItem("isLogin");
 
+  const appContext = useContext(AppContext);
+  console.log(appContext);
+
   return isLoggedIn ? (
     <>
       <main className={styles.Layout}>
-        <nav className={styles.topbar}>
+        <div className={styles.topbar}>
           <Topbar />
-        </nav>
-        <section className={styles.sidebar}>
-          <div>
+        </div>
+        <section className={styles.main_container}>
+          <div
+            className={
+              appContext.mobileSidebarOpen
+                ? styles.sidebarMobileOpen
+                : styles.sidebar
+            }
+          >
             <Sidebar />
           </div>
           <div className={styles.outlet}>

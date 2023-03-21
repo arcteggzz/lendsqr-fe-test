@@ -1,0 +1,50 @@
+@import "../assets/styles/functions.scss";
+@import "../assets/styles/colors.scss";
+
+.Layout {
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .main_container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #fbfbfb;
+    top: 100px;
+    position: relative;
+    @include mobileStyles() {
+      position: relative;
+      top: 72px;
+    }
+
+    .sidebar {
+      width: 283px;
+      min-height: 100%;
+      transition: all 0.4s ease-in-out;
+      @include mobileStyles() {
+        position: absolute;
+        left: -283px;
+        top: 0;
+      }
+    }
+
+    .sidebarMobileOpen {
+      width: 283px;
+      min-height: 100%;
+      transition: all 0.4s ease-in-out;
+      @include mobileStyles() {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    .outlet {
+      flex-grow: 1;
+      min-height: 100%;
+    }
+  }
+}

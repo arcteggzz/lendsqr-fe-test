@@ -4,7 +4,9 @@ import styles from "./Sidebar.module.scss";
 const Sidebar = () => {
   return (
     <>
-      <p>Sidebar</p>
+      <div className={styles.Sidebar}>
+        <p>Sidebar</p>
+      </div>
     </>
   );
 };

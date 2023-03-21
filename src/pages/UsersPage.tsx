@@ -1,11 +1,11 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import styles from "./LandingPage.module.scss";
+import styles from "./UsersPage.module.scss";
 
 const UsersPage = () => {
   return (
     <>
-      <div className={styles.LandingPage}>UsersPage</div>
+      <div className={styles.UsersPage}>UsersPage</div>
     </>
   );
 };
