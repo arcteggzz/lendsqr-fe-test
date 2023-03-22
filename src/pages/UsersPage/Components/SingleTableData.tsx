@@ -49,7 +49,7 @@ const SingleTableData = (props: SingleTableDataProps) => {
   };
 
   useEffect(() => {
-    let handler = (e: React.MouseEvent) => {
+    let handler = (e: Event) => {
       if (!optionsMenuRef?.current?.contains(e.target as HTMLDivElement))
         setOptionsMenuOpen(false);
     };

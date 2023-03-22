@@ -20,7 +20,7 @@ const TableHeader = () => {
   };
 
   useEffect(() => {
-    let handler = (e: React.MouseEvent) => {
+    let handler = (e: Event) => {
       if (!filterMenuRef?.current?.contains(e.target as HTMLDivElement))
         setFilterMenuOpen(false);
     };
