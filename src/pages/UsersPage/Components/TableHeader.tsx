@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./TableHeader.module.scss";
 import TableHeaderItem from "./TableHeaderItem";
 import FilterMenu from "./FilterMenu";
@@ -13,10 +13,24 @@ const TableHeader = () => {
     "Status",
   ];
   const [filterMenuOpen, setFilterMenuOpen] = useState(false);
+  let filterMenuRef = useRef<HTMLDivElement>(null);
 
   const handleOptionsMenu = () => {
     setFilterMenuOpen(!filterMenuOpen);
   };
+
+  useEffect(() => {
+    let handler = (e: React.MouseEvent) => {
+      if (!filterMenuRef?.current?.contains(e.target as HTMLDivElement))
+        setFilterMenuOpen(false);
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   return (
     <>
@@ -25,7 +39,10 @@ const TableHeader = () => {
           return <TableHeaderItem header={header} />;
         })}
       </div>
-      <div className={filterMenuOpen ? styles.FilterOpen : styles.FilterClosed}>
+      <div
+        className={filterMenuOpen ? styles.FilterOpen : styles.FilterClosed}
+        ref={filterMenuRef}
+      >
         <FilterMenu />
       </div>
     </>
