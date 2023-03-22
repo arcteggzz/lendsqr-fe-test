@@ -7,6 +7,7 @@ import UsersPage from "./pages/UsersPage/UsersPage";
 import UserDetailsPage from "./pages/UserDetailsPage/UserDetailsPage";
 import DashboardLayout from "./utils/DashboardLayout";
 import ComingSoonPage from "./pages/ComingSoonPage/ComingSoonPage";
+import TestPage from "./pages/TestPage";
 
 import { AppContextProvider } from "./context/AppContext";
 
@@ -18,6 +19,7 @@ const App = () => {
           {/* public routes */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/test" element={<TestPage />} />
 
           {/* private routes */}
           <Route element={<DashboardLayout />}>

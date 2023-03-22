@@ -2,6 +2,8 @@
 @import "../assets/styles/colors.scss";
 
 .Layout {
+  width: 100vw;
+
   .topbar {
     position: fixed;
     top: 0;
@@ -14,6 +16,7 @@
     min-height: 100vh;
     background-color: #fbfbfb;
     top: 100px;
+    width: 100vw;
     position: relative;
     @include mobileStyles() {
       position: relative;
@@ -44,6 +47,8 @@
 
     .outlet {
       flex-grow: 1;
+      background-color: #fbfbfb;
+      // border: 2px purple solid;
     }
   }
 }

@@ -24,10 +24,15 @@
   }
 
   .InfoCards {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    // display: grid;
+    // grid-template-columns: 25% 25% 25% 25%;
+    border: red solid 2px;
     width: 100%;
-    column-gap: 26px;
+    // column-gap: 26px;
     @include mobileStyles() {
       display: flex;
       flex-wrap: wrap;

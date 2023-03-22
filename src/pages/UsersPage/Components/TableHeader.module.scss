@@ -1,0 +1,10 @@
+@import "../../../assets/styles/functions.scss";
+@import "../../../assets/styles/colors.scss";
+
+.TableHeader {
+  display: grid;
+  grid-template-columns: 15.78% 14.7% 19% 16.6% 19.7% 14.22%;
+  width: 95%;
+  border: 2px yellow solid;
+  cursor: pointer;
+}

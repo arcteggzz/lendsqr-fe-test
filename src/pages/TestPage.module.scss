@@ -1,0 +1,16 @@
+.TableHeader {
+  width: 100vw;
+  border: 2px red solid;
+  display: flex;
+
+  .Sidebar {
+    width: 260px;
+    border: 2px blue solid;
+  }
+
+  .Outlet {
+    flex-grow: 1;
+    border: 2px orange solid;
+    background-color: orange;
+  }
+}

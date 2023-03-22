@@ -1,0 +1,17 @@
+@import "../../../assets/styles/functions.scss";
+@import "../../../assets/styles/colors.scss";
+
+.TableHeaderItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  column-gap: 10px;
+  border: 1px red solid;
+
+  h3 {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+  }
+}

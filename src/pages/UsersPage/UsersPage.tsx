@@ -6,6 +6,7 @@ import active_users_icon from "../../assets/images/active_users_icon.png";
 import users_loans_icon from "../../assets/images/users_loans_icon.png";
 import users_savings_icon from "../../assets/images/users_savings_icon.png";
 import users_users_icon from "../../assets/images/users_users_icon.png";
+import UserTable from "./Components/UserTable";
 
 const UsersPage = () => {
   const InfoCardData = [
@@ -40,6 +41,7 @@ const UsersPage = () => {
             return <InfoCard info={info} />;
           })}
         </section>
+        <UserTable />
       </div>
     </>
   );
