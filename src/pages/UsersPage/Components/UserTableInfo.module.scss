@@ -1,2 +1,8 @@
 @import "../../../assets/styles/functions.scss";
 @import "../../../assets/styles/colors.scss";
+
+.UserTableInfo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

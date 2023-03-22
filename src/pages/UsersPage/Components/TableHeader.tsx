@@ -3,14 +3,6 @@ import styles from "./TableHeader.module.scss";
 import TableHeaderItem from "./TableHeaderItem";
 import FilterMenu from "./FilterMenu";
 
-type InfoCardProps = {
-  info: {
-    icon: string;
-    textDescription: string;
-    number: string;
-  };
-};
-
 const TableHeader = () => {
   const TableHeaders = [
     "Organization",

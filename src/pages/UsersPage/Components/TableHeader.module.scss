@@ -4,7 +4,7 @@
 .TableHeader {
   display: grid;
   grid-template-columns: 15.78% 14.7% 19% 16.6% 19.7% 14.22%;
-  width: 95%;
+  width: 98%;
   cursor: pointer;
   position: relative;
 }
@@ -12,6 +12,7 @@
 .FilterOpen {
   display: block;
   position: absolute;
+  z-index: 10;
 }
 
 .FilterClosed {
