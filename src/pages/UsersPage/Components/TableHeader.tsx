@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import styles from "./TableHeader.module.scss";
 import TableHeaderItem from "./TableHeaderItem";
+import FilterMenu from "./FilterMenu";
 
 type InfoCardProps = {
   info: {
@@ -19,9 +20,10 @@ const TableHeader = () => {
     "Date joined",
     "Status",
   ];
+  const [filterMenuOpen, setFilterMenuOpen] = useState(false);
 
   const handleOptionsMenu = () => {
-    console.log("fired");
+    setFilterMenuOpen(!filterMenuOpen);
   };
 
   return (
@@ -30,6 +32,9 @@ const TableHeader = () => {
         {TableHeaders.map((header) => {
           return <TableHeaderItem header={header} />;
         })}
+      </div>
+      <div className={filterMenuOpen ? styles.FilterOpen : styles.FilterClosed}>
+        <FilterMenu />
       </div>
     </>
   );
