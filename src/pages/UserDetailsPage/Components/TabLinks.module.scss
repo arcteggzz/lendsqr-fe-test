@@ -1,0 +1,22 @@
+.TabLinks {
+  display: flex;
+  column-gap: 40px;
+  justify-content: space-between;
+
+  .active_link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #39cdcc;
+    border-bottom: 3px solid #39cdcc;
+  }
+
+  p {
+    padding: 10px 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+  }
+}
