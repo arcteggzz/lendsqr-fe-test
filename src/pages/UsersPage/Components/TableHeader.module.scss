@@ -7,6 +7,27 @@
   width: 98%;
   cursor: pointer;
   position: relative;
+  @include tabletStyles() {
+    grid-template-columns: 18.78% 18.7% 16.6% 24.7% 21.22%;
+  }
+  @include mobileStyles() {
+    grid-template-columns: 60% 40%;
+  }
+
+  .emailHeader {
+    @include tabletStyles() {
+      display: none;
+    }
+  }
+
+  .organizationHeader,
+  .emailHeader,
+  .phoneNumberHeader,
+  .dateJoinedHeader {
+    @include mobileStyles() {
+      display: none;
+    }
+  }
 }
 
 .FilterOpen {

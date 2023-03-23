@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import InfoCard from "./Components/InfoCard";
 import styles from "./UsersPage.module.scss";
@@ -33,16 +33,27 @@ const UsersPage = () => {
     },
   ];
 
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    fetch("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setUsers(data);
+      });
+  }, []);
+
   return (
     <>
       <div className={styles.UsersPage}>
         <h1>Users</h1>
         <section className={styles.InfoCards}>
           {InfoCardData.map((info) => {
-            return <InfoCard info={info} />;
+            return <InfoCard info={info} key={info.textDescription} />;
           })}
         </section>
-        <UserTable />
+        <UserTable users={users} />
         <PageControls />
       </div>
     </>

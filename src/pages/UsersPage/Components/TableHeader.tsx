@@ -35,9 +35,27 @@ const TableHeader = () => {
   return (
     <>
       <div className={styles.TableHeader} onClick={handleOptionsMenu}>
-        {TableHeaders.map((header) => {
+        {/* {TableHeaders.map((header) => {
           return <TableHeaderItem header={header} />;
-        })}
+        })} */}
+        <div className={styles.organizationHeader}>
+          <TableHeaderItem header={TableHeaders[0]} />
+        </div>
+        <div className={styles.userNameHeader}>
+          <TableHeaderItem header={TableHeaders[1]} />
+        </div>
+        <div className={styles.emailHeader}>
+          <TableHeaderItem header={TableHeaders[2]} />
+        </div>
+        <div className={styles.phoneNumberHeader}>
+          <TableHeaderItem header={TableHeaders[3]} />
+        </div>
+        <div className={styles.dateJoinedHeader}>
+          <TableHeaderItem header={TableHeaders[4]} />
+        </div>
+        <div className={styles.statusHeader}>
+          <TableHeaderItem header={TableHeaders[5]} />
+        </div>
       </div>
       <div
         className={filterMenuOpen ? styles.FilterOpen : styles.FilterClosed}

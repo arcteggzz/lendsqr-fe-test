@@ -31,3 +31,10 @@
     @content;
   }
 }
+
+//on screens between 1200px and 720px
+@mixin tabletStyles() {
+  @media (max-width: 1200px) and (min-width: 720px) {
+    @content;
+  }
+}

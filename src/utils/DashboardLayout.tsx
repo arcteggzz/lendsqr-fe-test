@@ -10,7 +10,6 @@ const DashboardLayout = () => {
   const isLoggedIn = localStorage.getItem("isLogin");
 
   const appContext = useContext(AppContext);
-  console.log(appContext);
 
   return isLoggedIn ? (
     <>

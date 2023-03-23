@@ -22,12 +22,35 @@
     padding: 16px 0;
     justify-items: start;
     align-items: center;
+    word-wrap: break-word;
+    @include tabletStyles() {
+      grid-template-columns: 18.78% 18.7% 16.6% 24.7% 21.22%;
+    }
+    @include mobileStyles() {
+      grid-template-columns: 60% 40%;
+    }
 
     p,
     button {
       font-weight: 400;
       font-size: 14px;
       line-height: 16px;
+      word-break: break-all;
+    }
+
+    .email {
+      @include tabletStyles() {
+        display: none;
+      }
+    }
+
+    .email,
+    .createdAt,
+    .phoneNumber,
+    .orgName {
+      @include mobileStyles() {
+        display: none;
+      }
     }
 
     .showPending,

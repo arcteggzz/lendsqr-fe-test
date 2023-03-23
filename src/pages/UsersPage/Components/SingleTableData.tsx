@@ -38,9 +38,9 @@ const SingleTableData = (props: SingleTableDataProps) => {
 
   const getCustomerStatus = (dateTimeString: string) => {
     const year = +dateTimeString.substring(0, 4);
-    if (year > 2040) return "Pending";
-    else if (year < 1990) return "Blacklisted";
-    else if (year > 1990 && year < 2010) return "Inactive";
+    if (year >= 2040) return "Pending";
+    else if (year <= 1999) return "Blacklisted";
+    else if (year >= 2000 && year <= 2010) return "Inactive";
     else return "Active";
   };
 
@@ -66,11 +66,13 @@ const SingleTableData = (props: SingleTableDataProps) => {
       <hr className={props.id !== 0 ? styles.showLine : styles.hideLine} />
       <div className={styles.SingleTableData}>
         <div className={styles.userdetails}>
-          <p>{props.user.orgName}</p>
-          <p>{props.user.userName}</p>
-          <p>{props.user.email}</p>
-          <p>{props.user.phoneNumber}</p>
-          <p>{dateTimeFormatter(props.user.createdAt)}</p>
+          <p className={styles.orgName}>{props.user.orgName}</p>
+          <p className={styles.userName}>{props.user.userName}</p>
+          <p className={styles.email}>{props.user.email}</p>
+          <p className={styles.phoneNumber}>{props.user.phoneNumber}</p>
+          <p className={styles.createdAt}>
+            {dateTimeFormatter(props.user.createdAt)}
+          </p>
           <div
             className={
               getCustomerStatus(props.user.createdAt) === "Pending"

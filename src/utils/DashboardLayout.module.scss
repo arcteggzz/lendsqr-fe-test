@@ -27,6 +27,9 @@
       width: 283px;
       min-height: 100%;
       transition: all 0.4s ease-in-out;
+      @include tabletStyles() {
+        width: 250px;
+      }
       @include mobileStyles() {
         position: absolute;
         left: -283px;
