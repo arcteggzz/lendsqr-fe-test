@@ -10,15 +10,18 @@ const UserProfile = () => {
     <>
       <div className={styles.UserProfile}>
         <div className={styles.UserProfile_container}>
-          <img
-            src={avatar_icon}
-            alt="user_avatar"
-            className={styles.avatar_icon}
-          />
-          <div className={styles.name_panel}>
-            <h2>Grace Effiom</h2>
-            <p>LSQFf587g90</p>
+          <div className={styles.userName_avatar}>
+            <img
+              src={avatar_icon}
+              alt="user_avatar"
+              className={styles.avatar_icon}
+            />
+            <div className={styles.name_panel}>
+              <h2>Grace Effiom</h2>
+              <p>LSQFf587g90</p>
+            </div>
           </div>
+
           <div className={styles.user_tier}>
             <p>User’s Tier</p>
             <div className={styles.stars}>

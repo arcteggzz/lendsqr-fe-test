@@ -7,6 +7,10 @@
   row-gap: 32px;
   padding: 30px 60px;
   width: 100%;
+  @include mobileStyles() {
+    padding: 12px 4vw;
+    row-gap: 24px;
+  }
 
   .backLink {
     display: flex;
@@ -22,6 +26,12 @@
   .pageHeader {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    @include mobileStyles() {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 24px;
+    }
 
     h1 {
       font-weight: 500;

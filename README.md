@@ -29,4 +29,4 @@ Thanks.
 3. SCSS for styling
 4. React Router Dom for Routing
 
-###
+### FEATURES IMPLEMENTED

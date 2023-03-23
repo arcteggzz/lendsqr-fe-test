@@ -105,8 +105,22 @@ const GeneralDetails = () => {
         <hr className={styles.showLine} />
 
         {/* Guarantor */}
-        <section>
+        <section className={styles.Guarantor}>
           <h2>Guarantor</h2>
+          <div className={styles.guarantor_details}>
+            <div className={styles.info_detail}>
+              <p>full Name</p>
+              <h2>Debby Ogana</h2>
+            </div>
+            <div className={styles.info_detail}>
+              <p>Phone Number </p>
+              <h2>@grace_effiom</h2>
+            </div>
+            <div className={styles.info_detail}>
+              <p>Relationship</p>
+              <h2>@grace_effiom</h2>
+            </div>
+          </div>
         </section>
       </div>
     </>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./UserDetailsPage.module.scss";
 import back_arrow from "../../assets/images/back_arrow.png";
@@ -6,6 +6,14 @@ import UserProfile from "./Components/UserProfile";
 import GeneralDetails from "./Components/GeneralDetails";
 
 const UserDetailsPage = () => {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
   return (
     <>
       <div className={styles.UserDetailsPage}>
