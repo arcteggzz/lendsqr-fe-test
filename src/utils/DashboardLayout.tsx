@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import Topbar from "../Components/TopBar";
@@ -10,6 +10,14 @@ const DashboardLayout = () => {
   const isLoggedIn = localStorage.getItem("isLogin");
 
   const appContext = useContext(AppContext);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return isLoggedIn ? (
     <>

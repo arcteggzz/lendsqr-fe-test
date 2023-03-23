@@ -6,7 +6,7 @@ import activate_icon from "../../../assets/images/activate_icon.png";
 import { Link } from "react-router-dom";
 
 type StatusOptionsMenuProps = {
-  userName: string;
+  id: string;
 };
 
 const StatusOptionsMenu = (props: StatusOptionsMenuProps) => {
@@ -15,7 +15,7 @@ const StatusOptionsMenu = (props: StatusOptionsMenuProps) => {
       <div className={styles.StatusOptionsMenu}>
         <Link
           className={styles.icon_container}
-          to={`/dashboard/users/${props.userName}`}
+          to={`/dashboard/users/${props.id}`}
         >
           <img src={view_details_icon} alt="view_details_icon" />
           <p>View Details</p>

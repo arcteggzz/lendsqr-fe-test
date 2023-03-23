@@ -1,15 +1,22 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "./UserTable.module.scss";
 import TableHeader from "./TableHeader";
 import UserTableInfo from "./UserTableInfo";
-import { UserProps } from "../../../utils/Users.types";
+import { UserProps, User } from "../../../utils/Users.types";
 
-const UserTable = (props: UserProps) => {
+const UserTable = ({ users }: UserProps) => {
+  const [userList, setUserList] = useState<User[]>([]);
+
+  useEffect(() => {
+    console.log(users);
+    setUserList(users);
+  }, [users]);
+
   return (
     <>
       <div className={styles.UserTable}>
         <TableHeader />
-        <UserTableInfo users={props.users} />
+        <UserTableInfo users={userList} />
       </div>
     </>
   );

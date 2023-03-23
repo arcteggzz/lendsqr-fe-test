@@ -13,5 +13,6 @@
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 /*# sourceMappingURL=index.css.map */

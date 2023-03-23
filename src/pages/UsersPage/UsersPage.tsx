@@ -34,14 +34,45 @@ const UsersPage = () => {
   ];
 
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+
+  async function fetchUsers() {
+    const response = await fetch(
+      "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
+    );
+    const users = await response.json();
+    return users;
+  }
+
+  // useEffect(() => {
+  //   fetchUsers().then((calledusers) => {
+  //     if (!localStorage.getItem("users"))
+  //       localStorage.setItem("users", JSON.stringify(calledusers));
+  //     setUsers(calledusers);
+  //   });
+  // }, []);
 
   useEffect(() => {
-    fetch("https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setUsers(data);
-      });
+    const handleFetchUser = async () => {
+      try {
+        setLoading(true);
+        const fetchedUsers = await fetchUsers();
+        console.log(fetchedUsers);
+        if (!localStorage.getItem("users"))
+          localStorage.setItem("users", JSON.stringify(fetchedUsers));
+        setLoading(false);
+        setUsers(fetchedUsers);
+        setSuccess(true);
+      } catch (error) {
+        setLoading(false);
+        setError("An error occured");
+        setSuccess(false);
+      }
+    };
+
+    handleFetchUser();
   }, []);
 
   return (

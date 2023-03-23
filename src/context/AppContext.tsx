@@ -11,6 +11,8 @@ type AppContextType = {
   setitemsPerPage: React.Dispatch<React.SetStateAction<number>>;
   currentPage: number;
   setcurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  paginationLimit: number;
+  setPaginationLimit: React.Dispatch<React.SetStateAction<number>>;
 };
 
 // export const AppContext = createContext<AppContextType | null>(null);
@@ -20,6 +22,7 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [itemsPerPage, setitemsPerPage] = useState(10);
   const [currentPage, setcurrentPage] = useState(1);
+  const [paginationLimit, setPaginationLimit] = useState(10);
 
   return (
     <AppContext.Provider
@@ -30,6 +33,8 @@ export const AppContextProvider = ({ children }: AppContextProviderProps) => {
         setitemsPerPage: setitemsPerPage,
         currentPage: currentPage,
         setcurrentPage: setcurrentPage,
+        paginationLimit: paginationLimit,
+        setPaginationLimit: setPaginationLimit,
       }}
     >
       {children}

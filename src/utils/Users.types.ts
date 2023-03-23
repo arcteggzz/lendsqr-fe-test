@@ -44,3 +44,7 @@ export type User = {
 export type UserProps = {
   users: User[];
 };
+
+export type SingleUserProps = {
+  userDetail: User | {};
+};
