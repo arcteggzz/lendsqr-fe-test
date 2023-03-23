@@ -11,6 +11,7 @@ type SingleTableDataProps = {
     email: string;
     phoneNumber: string;
     lastActiveDate: string;
+    id: string;
   };
   id: number;
 };
@@ -117,7 +118,7 @@ const SingleTableData = (props: SingleTableDataProps) => {
           className={optionsMenuOpen ? styles.MenuOpen : styles.MenuClosed}
           ref={optionsMenuRef}
         >
-          <StatusOptionsMenu userName={props.user.userName} />
+          <StatusOptionsMenu id={props.user.id} />
         </div>
       </div>
     </>

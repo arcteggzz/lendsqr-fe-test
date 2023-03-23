@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Sidebar.module.scss";
 import NavLink from "./NavLink";
+import { useNavigate } from "react-router-dom";
 import Switch_Organization from "../assets/images/sidebar_icons/Switch Organization.png";
 import dropdown_open_icon from "../assets/images/sidebar_icons/dropdown_open_icon.png";
 import dashboard_icon from "../assets/images/sidebar_icons/Dashboard.png";
@@ -27,6 +28,8 @@ import system_messages from "../assets/images/sidebar_icons/systems_messages.png
 import log_out from "../assets/images/sidebar_icons/sign-out 1.png";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+
   const navLink = {
     image: Switch_Organization,
     location: "Switch Organization",
@@ -136,6 +139,11 @@ const Sidebar = () => {
     location: "Logout",
   };
 
+  const logout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+
   return (
     <>
       <div className={styles.Sidebar}>
@@ -153,7 +161,7 @@ const Sidebar = () => {
         {thirdNavLinks.map((item) => {
           return <NavLink key={item.location} navLink={item} />;
         })}
-        <div className={styles.logout}>
+        <div className={styles.logout} onClick={logout}>
           <NavLink navLink={navLink3} />
         </div>
       </div>

@@ -30,3 +30,8 @@ Thanks.
 4. React Router Dom for Routing
 
 ### FEATURES IMPLEMENTED
+
+### CHALLENGES FACED
+
+mobile responsiveness
+api malfunction due to chrome extenstion installation

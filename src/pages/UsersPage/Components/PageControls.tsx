@@ -5,11 +5,35 @@ import left_icon from "../../../assets/images/left_icon.png";
 import { AppContext } from "../../../context/AppContext";
 
 const PageControls = () => {
-  const { itemsPerPage, setitemsPerPage } = useContext(AppContext);
+  const {
+    itemsPerPage,
+    setitemsPerPage,
+    currentPage,
+    setcurrentPage,
+    paginationLimit,
+    setPaginationLimit,
+  } = useContext(AppContext);
+  const appContext = useContext(AppContext);
 
   const handleSelection = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setcurrentPage(1);
     setitemsPerPage(+e.target.value);
-    console.log(itemsPerPage);
+    setPaginationLimit(100 / +e.target.value);
+    console.log(appContext);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage < 1) {
+      setcurrentPage(currentPage - 1);
+    }
+    console.log(appContext);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < paginationLimit) {
+      setcurrentPage(currentPage - 1);
+    }
+    console.log(appContext);
   };
 
   const getList = (num: number) => {

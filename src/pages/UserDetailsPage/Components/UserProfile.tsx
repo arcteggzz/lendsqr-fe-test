@@ -1,24 +1,25 @@
-import React, { useState, useEffect, useContext } from "react";
 import styles from "./UserProfile.module.scss";
 import open_star_icon from "../../../assets/images/open_star_icon.png";
 import avatar_icon from "../../../assets/images/avatar.png";
 import filled_star_icon from "../../../assets/images/filled_star_icon.png";
 import TabLinks from "./TabLinks";
+import { SingleUserProps } from "../../../utils/Users.types";
 
-const UserProfile = () => {
+const UserProfile = ({ userDetail }: any) => {
+  // const UserProfile = ({ userDetail }: SingleUserProps) => {
   return (
     <>
       <div className={styles.UserProfile}>
         <div className={styles.UserProfile_container}>
           <div className={styles.userName_avatar}>
             <img
-              src={avatar_icon}
+              src={userDetail?.profile?.avatar}
               alt="user_avatar"
               className={styles.avatar_icon}
             />
             <div className={styles.name_panel}>
-              <h2>Grace Effiom</h2>
-              <p>LSQFf587g90</p>
+              <h2>{`${userDetail?.profile?.lastName} ${userDetail?.profile?.firstName}`}</h2>
+              <p>{userDetail?.accountNumber}</p>
             </div>
           </div>
 
@@ -31,8 +32,10 @@ const UserProfile = () => {
             </div>
           </div>
           <div className={styles.account_details}>
-            <h2>₦200,000.00</h2>
-            <p>9912345678/Providus Bank</p>
+            <h2>{`${userDetail?.profile?.currency}${(
+              userDetail?.accountBalance * 100
+            ).toLocaleString()}.00`}</h2>
+            <p>{`${userDetail?.accountNumber}/Providus Bank`}</p>
           </div>
         </div>
 
