@@ -23,6 +23,8 @@ import reports from "../assets/images/sidebar_icons/Reports.png";
 import preferences from "../assets/images/sidebar_icons/Preferences.png";
 import fees_and_pricing from "../assets/images/sidebar_icons/Fees and Pricing.png";
 import audit_logs from "../assets/images/sidebar_icons/Audit Logs.png";
+import system_messages from "../assets/images/sidebar_icons/systems_messages.png";
+import log_out from "../assets/images/sidebar_icons/sign-out 1.png";
 
 const Sidebar = () => {
   const navLink = {
@@ -123,7 +125,16 @@ const Sidebar = () => {
       image: audit_logs,
       location: "Audio Logs",
     },
+    {
+      image: system_messages,
+      location: "Systems Messages",
+    },
   ];
+
+  const navLink3 = {
+    image: log_out,
+    location: "Logout",
+  };
 
   return (
     <>
@@ -142,6 +153,9 @@ const Sidebar = () => {
         {thirdNavLinks.map((item) => {
           return <NavLink key={item.location} navLink={item} />;
         })}
+        <div className={styles.logout}>
+          <NavLink navLink={navLink3} />
+        </div>
       </div>
     </>
   );
