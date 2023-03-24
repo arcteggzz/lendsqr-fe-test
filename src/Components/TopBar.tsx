@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import styles from "./Topbar.module.scss";
 import search from "../assets/images/search.png";

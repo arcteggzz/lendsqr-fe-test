@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import Topbar from "../Components/TopBar";

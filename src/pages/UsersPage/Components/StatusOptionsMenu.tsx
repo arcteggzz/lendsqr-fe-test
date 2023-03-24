@@ -1,4 +1,3 @@
-import React, { useState, useRef } from "react";
 import styles from "./StatusOptionsMenu.module.scss";
 import blacklist_icon from "../../../assets/images/blacklist_icon.png";
 import view_details_icon from "../../../assets/images/view_details_icon.png";

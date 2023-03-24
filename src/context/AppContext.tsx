@@ -15,7 +15,6 @@ type AppContextType = {
   setPaginationLimit: React.Dispatch<React.SetStateAction<number>>;
 };
 
-// export const AppContext = createContext<AppContextType | null>(null);
 export const AppContext = createContext({} as AppContextType);
 
 export const AppContextProvider = ({ children }: AppContextProviderProps) => {

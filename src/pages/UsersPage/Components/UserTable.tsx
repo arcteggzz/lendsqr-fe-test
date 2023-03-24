@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./UserTable.module.scss";
 import TableHeader from "./TableHeader";
 import UserTableInfo from "./UserTableInfo";
@@ -8,7 +8,6 @@ const UserTable = ({ users }: UserProps) => {
   const [userList, setUserList] = useState<User[]>([]);
 
   useEffect(() => {
-    console.log(users);
     setUserList(users);
   }, [users]);
 

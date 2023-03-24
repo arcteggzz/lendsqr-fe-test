@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import InfoCard from "./Components/InfoCard";
 import styles from "./UsersPage.module.scss";
 import active_users_icon from "../../assets/images/active_users_icon.png";
@@ -51,7 +50,6 @@ const UsersPage = () => {
       try {
         setLoading(true);
         const fetchedUsers = await fetchUsers();
-        console.log(fetchedUsers);
         setLoading(false);
         setUsers(fetchedUsers);
         setSuccess(true);

@@ -19,15 +19,18 @@
     width: 98%;
     display: grid;
     grid-template-columns: 15.78% 14.7% 19% 16.6% 19.7% 14.22%;
-    padding: 16px 0;
+    grid-gap: 14px;
+    padding: 16px 35px 16px 0px;
     justify-items: start;
     align-items: center;
-    word-wrap: break-word;
+
     @include tabletStyles() {
       grid-template-columns: 18.78% 18.7% 16.6% 24.7% 21.22%;
+      grid-gap: 14px;
     }
     @include mobileStyles() {
       grid-template-columns: 60% 40%;
+      grid-gap: 12px;
     }
 
     p,
@@ -35,7 +38,10 @@
       font-weight: 400;
       font-size: 14px;
       line-height: 16px;
-      word-break: break-all;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .email {
@@ -57,7 +63,7 @@
     .showBlacklisted,
     .showActive,
     .showInactive {
-      padding: 7px 20px;
+      padding: 7px 16px;
       border-radius: 100px;
       border: none;
       display: flex;
@@ -89,6 +95,7 @@
     width: 2%;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 16px 0;
     cursor: pointer;
     position: relative;
@@ -106,7 +113,6 @@
   transform: translateY(0);
   transition: all ease 1s;
   position: absolute;
-  // top: 0;
   right: 40px;
   z-index: 10;
 }
