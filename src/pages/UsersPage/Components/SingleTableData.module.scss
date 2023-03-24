@@ -14,13 +14,15 @@
 .SingleTableData {
   width: 100%;
   display: flex;
+  justify-content: space-between;
 
   .userdetails {
-    width: 98%;
+    width: 95%;
     display: grid;
-    grid-template-columns: 15.78% 14.7% 19% 16.6% 19.7% 14.22%;
-    grid-gap: 14px;
+    grid-template-columns: 15% 14.2% 19% 14.48% 19.7% 17.28%;
+    grid-gap: 12px;
     padding: 16px 35px 16px 0px;
+    margin: 0 0 0;
     justify-items: start;
     align-items: center;
 
