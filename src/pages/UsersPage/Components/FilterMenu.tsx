@@ -11,7 +11,7 @@ const FilterMenu = () => {
           <div className={styles.date_input}>
             <input type="text" className="" placeholder="Organization" />
             <div className={styles.calendar_icon}>
-              <img src={arrow_icon} alt="" />
+              <img src={arrow_icon} alt="arrow_icon" />
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@ const FilterMenu = () => {
           <div className={styles.date_input}>
             <input type="text" className="" placeholder="Date" />
             <div className={styles.calendar_icon}>
-              <img src={calendar} alt="" />
+              <img src={calendar} alt="calendar_icon" />
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ const FilterMenu = () => {
           <div className={styles.date_input}>
             <input type="text" className="" placeholder="Status" />
             <div className={styles.calendar_icon}>
-              <img src={arrow_icon} alt="" />
+              <img src={arrow_icon} alt="arrow_icon" />
             </div>
           </div>
         </div>

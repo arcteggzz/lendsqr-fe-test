@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import SingleTableData from "./SingleTableData";
 import styles from "./UserTableInfo.module.scss";
 import { UserProps, User } from "../../../utils/Users.types";
@@ -6,10 +6,6 @@ import { AppContext } from "../../../context/AppContext";
 
 const UserTableInfo = ({ users }: UserProps) => {
   const { currentPage, itemsPerPage } = useContext(AppContext);
-
-  useEffect(() => {
-    console.log(`currentPage ${currentPage}, itemsPerPage${itemsPerPage}`);
-  }, [itemsPerPage, currentPage]);
 
   return (
     <>

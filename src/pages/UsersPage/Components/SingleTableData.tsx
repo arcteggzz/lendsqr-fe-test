@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import styles from "./SingleTableData.module.scss";
 import options_icon from "../../../assets/images/options_icon.png";
 import StatusOptionsMenu from "./StatusOptionsMenu";
@@ -112,7 +112,7 @@ const SingleTableData = (props: SingleTableDataProps) => {
           </div>
         </div>
         <div className={styles.options_icon} onClick={handleOptionsMenu}>
-          <img src={options_icon} alt="" />
+          <img src={options_icon} alt="options_icon" />
         </div>
         <div
           className={optionsMenuOpen ? styles.MenuOpen : styles.MenuClosed}

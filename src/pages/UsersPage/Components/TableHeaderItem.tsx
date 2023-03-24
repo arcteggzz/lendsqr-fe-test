@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import styles from "./TableHeaderItem.module.scss";
 import staggered_dropdown_icon from "../../../assets/images/staggered_dropdown_icon.png";
 
@@ -11,7 +11,7 @@ const TableHeaderItem = (props: TableHeaderItemProps) => {
     <>
       <div className={styles.TableHeaderItem}>
         <h3>{props.header}</h3>
-        <img src={staggered_dropdown_icon} alt="" />
+        <img src={staggered_dropdown_icon} alt="staggered_dropdown_icon" />
       </div>
     </>
   );

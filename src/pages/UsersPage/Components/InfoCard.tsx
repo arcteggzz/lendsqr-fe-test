@@ -1,6 +1,4 @@
-import React, { useState, useRef } from "react";
 import styles from "./InfoCard.module.scss";
-import active_users_icon from "../../../assets/images/active_users_icon.png";
 
 type InfoCardProps = {
   info: {

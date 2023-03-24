@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styles from "./LoginPage.module.scss";
 import lendsqr_logo from "../../assets/images/lendsqr_log.png";
 import login_hero from "../../assets/images/login_hero.png";
@@ -33,9 +33,9 @@ const LoginPage = () => {
       <main className={styles.Login}>
         <section className="">
           <div className={styles.Image_Container}>
-            <img src={lendsqr_logo} alt="" />
+            <img src={lendsqr_logo} alt="lendsqr_logo" />
           </div>
-          <img src={login_hero} alt="" />
+          <img src={login_hero} alt="hamburger_icon" />
         </section>
         <form action="" onSubmit={handleSubmit}>
           <header>

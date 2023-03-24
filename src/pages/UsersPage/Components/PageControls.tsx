@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styles from "./PageControls.module.scss";
 import right_icon from "../../../assets/images/right_icon.png";
 import left_icon from "../../../assets/images/left_icon.png";
@@ -19,21 +19,18 @@ const PageControls = () => {
     setcurrentPage(1);
     setitemsPerPage(+e.target.value);
     setPaginationLimit(100 / +e.target.value);
-    console.log(appContext);
   };
 
   const handlePreviousPage = () => {
     if (currentPage < 1) {
       setcurrentPage(currentPage - 1);
     }
-    console.log(appContext);
   };
 
   const handleNextPage = () => {
     if (currentPage < paginationLimit) {
       setcurrentPage(currentPage - 1);
     }
-    console.log(appContext);
   };
 
   const getList = (num: number) => {
@@ -62,11 +59,11 @@ const PageControls = () => {
         </div>
         <div className={styles.right_side}>
           <button>
-            <img src={left_icon} alt="" />
+            <img src={left_icon} alt="previous_icon" />
           </button>
           <p>{getList(itemsPerPage)}</p>
           <button>
-            <img src={right_icon} alt="" />
+            <img src={right_icon} alt="next_icon" />
           </button>
         </div>
       </div>

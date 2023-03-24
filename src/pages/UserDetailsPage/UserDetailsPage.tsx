@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./UserDetailsPage.module.scss";
 import back_arrow from "../../assets/images/back_arrow.png";
 import UserProfile from "./Components/UserProfile";
 import GeneralDetails from "./Components/GeneralDetails";
-import { User } from "../../utils/Users.types";
 
 const UserDetailsPage = () => {
   const { pathname } = useLocation();
@@ -28,7 +27,6 @@ const UserDetailsPage = () => {
       try {
         setLoading(true);
         const fetchedUser = await fetchUser();
-        console.log(fetchedUser);
         setLoading(false);
         setSingleUser(fetchedUser);
         setSuccess(true);

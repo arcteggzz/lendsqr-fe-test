@@ -1,4 +1,3 @@
-import React, { useState, useRef } from "react";
 import styles from "./TabLinks.module.scss";
 
 const TabLinks = () => {
