@@ -8,14 +8,19 @@
   padding: 0 10vw;
   justify-content: center;
   align-items: center;
-  column-gap: 32px;
+  column-gap: 300px;
   @include mobileStyles {
     flex-direction: column;
-    ustify-content: center;
+    justify-content: center;
     align-items: center;
     row-gap: 32px;
     padding: 0 5vw;
     text-align: center;
+  }
+  @include tabletStyles {
+    column-gap: 80px;
+    row-gap: 32px;
+    padding: 0 5vw;
   }
 
   section {
@@ -24,18 +29,18 @@
     row-gap: 32px;
     h1 {
       font-weight: 700;
-      font-size: 60px;
-      line-height: 72px;
+      font-size: 48px;
+      line-height: 60px;
       color: $secondary;
       @include tabletStyles() {
         font-weight: 600;
-        font-size: 48px;
-        line-height: 60px;
+        font-size: 36px;
+        line-height: 48px;
       }
       @include mobileStyles {
         font-weight: 600;
         font-size: 28px;
-        line-height: 32px;
+        line-height: 36px;
       }
 
       span {
@@ -91,7 +96,7 @@
 
   img {
     @include mobileStyles {
-      width: 70vw;
+      width: 50vw;
       height: auto;
     }
   }
