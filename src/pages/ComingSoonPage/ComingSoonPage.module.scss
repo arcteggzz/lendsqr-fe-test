@@ -19,6 +19,9 @@
     font-weight: 600;
     font-size: 32px;
     line-height: 38px;
+    @include tabletStyles() {
+      text-align: center;
+    }
   }
 
   h3 {
@@ -28,8 +31,13 @@
   }
 
   img {
+    width: 45vw;
     @include mobileStyles() {
       width: 80vw;
+      height: auto;
+    }
+    @include tabletStyles() {
+      width: 50vw;
       height: auto;
     }
   }
