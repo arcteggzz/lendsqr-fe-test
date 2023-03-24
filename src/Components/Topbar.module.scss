@@ -86,6 +86,11 @@
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
         cursor: pointer;
+        transition: all ease 0.2s;
+      }
+
+      .search_icon:hover {
+        background-color: #39cdcc70;
       }
     }
   }

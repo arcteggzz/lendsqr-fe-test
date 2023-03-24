@@ -9,7 +9,7 @@ const ComingSoonPage = () => {
       <div className={styles.ComingSoonPage}>
         <h2>WE ARE WORKING ON THIS FEATURE!!!</h2>
         <h3>
-          Kindly visit our{" "}
+          Kindly visit the{" "}
           <>
             <Link to="/dashboard/users">Users</Link>
           </>{" "}

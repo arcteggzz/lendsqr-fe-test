@@ -46,22 +46,12 @@ const UsersPage = () => {
     return users;
   }
 
-  // useEffect(() => {
-  //   fetchUsers().then((calledusers) => {
-  //     if (!localStorage.getItem("users"))
-  //       localStorage.setItem("users", JSON.stringify(calledusers));
-  //     setUsers(calledusers);
-  //   });
-  // }, []);
-
   useEffect(() => {
     const handleFetchUser = async () => {
       try {
         setLoading(true);
         const fetchedUsers = await fetchUsers();
         console.log(fetchedUsers);
-        if (!localStorage.getItem("users"))
-          localStorage.setItem("users", JSON.stringify(fetchedUsers));
         setLoading(false);
         setUsers(fetchedUsers);
         setSuccess(true);

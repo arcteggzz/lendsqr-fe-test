@@ -24,6 +24,41 @@
       line-height: 16px;
     }
 
+    .organization {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .input_organization_field {
+        padding: 12px 20px;
+        width: 85%;
+        border-radius: 8px 0 0 8px;
+        opacity: 0.2;
+        border-top: 1px solid #213f7d;
+        border-left: 1px solid #213f7d;
+        border-bottom: 1px solid #213f7d;
+        border-right: none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #545f7d;
+      }
+
+      .dropdown_icon_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0.2;
+        border-top: 1px solid #213f7d;
+        border-right: 1px solid #213f7d;
+        border-bottom: 1px solid #213f7d;
+        border-radius: 0 8px 8px 0;
+        width: 15%;
+        height: 100%;
+        padding: 16.72px;
+      }
+    }
+
     .input_field {
       padding: 12px 20px;
       width: 100%;
@@ -34,6 +69,15 @@
       font-size: 14px;
       line-height: 16px;
       color: #545f7d;
+    }
+
+    .input_organization_field {
+      position: relative;
+    }
+
+    .dropdown_image {
+      width: 11.2px;
+      height: 6.57px;
     }
 
     .date_input {
@@ -60,6 +104,7 @@
         border-right: 1px solid #213f7d;
         opacity: 0.2;
         border-left: none;
+        cursor: pointer;
       }
     }
   }

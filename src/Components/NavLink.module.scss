@@ -8,7 +8,7 @@
   width: 100%;
   height: 42px;
   padding: 10px 0 10px 30px;
-
+  transition: all ease 0.2s;
   text-decoration: none;
   // background-color: #39cdcc;
   // border-left: 3px solid black;
@@ -19,6 +19,7 @@
     line-height: 19px;
     text-decoration: none;
     color: $primary;
+    cursor: pointer;
   }
 
   .secImage {
@@ -28,4 +29,9 @@
   .secImage {
     display: none;
   }
+}
+
+.NavLink:hover {
+  background-color: #39cdcc20;
+  border-left: 3px solid $secondary;
 }
