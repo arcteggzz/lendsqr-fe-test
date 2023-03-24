@@ -15,7 +15,10 @@ const LandingPage = () => {
             <p>
               Created a mini application for a user to login and view a list of
               users fetched from an API and viewed details about each user.
+              Kindly login using the details below:
             </p>
+            <h6>Username:- recruiter@lendsqr.com</h6>
+            <h6>Password:- lendsQrRecruiter</h6>
             <p>
               Kindly note that all assests and designs used belong to Lengsqr.
               This is part of the LENDSQR assessment task.
