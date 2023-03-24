@@ -72,7 +72,7 @@ const UsersPage = () => {
             return <InfoCard info={info} key={info.textDescription} />;
           })}
         </section>
-        <UserTable users={users} />
+        <UserTable users={users} loading={loading} />
         <PageControls />
       </div>
     </>

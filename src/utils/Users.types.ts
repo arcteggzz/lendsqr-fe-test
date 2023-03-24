@@ -41,8 +41,9 @@ export type User = {
   id: string;
 };
 
-export type UserProps = {
+export type UserTableProps = {
   users: User[];
+  loading: boolean;
 };
 
 export type SingleUserProps = {
