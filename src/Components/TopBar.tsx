@@ -8,6 +8,7 @@ import avatar_icon from "../assets/images/avatar_icon.png";
 import dropdown_icon from "../assets/images/dropdown_icon.png";
 import hamburger_open from "../assets/images/hamburger_open.png";
 import hamburger_close from "../assets/images/hamburger_close.png";
+import { Link } from "react-router-dom";
 
 const Topbar = () => {
   const { mobileSidebarOpen, setMobileSidebarOpen } = useContext(AppContext);
@@ -25,13 +26,13 @@ const Topbar = () => {
           />
         </div>
         <div className={styles.left_container}>
-          <div className={styles.logo_burger_container}>
+          <Link className={styles.logo_burger_container} to="/dashboard">
             <img
               src={dashboard_logo}
               alt="dashboard_logo"
               className={styles.dashboard_logo}
             />
-          </div>
+          </Link>
 
           <div className={styles.search_input_bar}>
             <input type="text" placeholder="Search for anything" />

@@ -6,28 +6,7 @@ import { AppContext } from "../../../context/AppContext";
 
 const UserTableInfo = ({ users }: UserProps) => {
   const { currentPage, itemsPerPage } = useContext(AppContext);
-  const [usersToDisplay, setUsersToDisplay] = useState<User[]>([]);
-  // const allUsers = JSON.parse(localStorage?.getItem("users")!);
 
-  // const filterUsers = () => {
-
-  // };
-
-  // useEffect(() => {
-  //   console.log(
-  //     users.slice(
-  //       currentPage * itemsPerPage - itemsPerPage,
-  //       currentPage * itemsPerPage
-  //     )
-  //   );
-  //   setUsersToDisplay(
-  //     users.slice(
-  //       currentPage * itemsPerPage - itemsPerPage,
-  //       currentPage * itemsPerPage
-  //     )
-  //   );
-  //   // filterUsers();
-  // }, []);
   useEffect(() => {
     console.log(`currentPage ${currentPage}, itemsPerPage${itemsPerPage}`);
   }, [itemsPerPage, currentPage]);

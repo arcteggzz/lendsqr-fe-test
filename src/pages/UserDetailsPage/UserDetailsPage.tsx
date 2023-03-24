@@ -39,36 +39,8 @@ const UserDetailsPage = () => {
       }
     };
 
-    console.log(userId);
     handleFetchUser();
   }, []);
-
-  // useEffect(() => {
-  //   //scroll window to top of page
-  //   window.scrollTo({
-  //     top: 0,
-  //     left: 0,
-  //     behavior: "smooth",
-  //   });
-
-  //   const parseJSON = (json: any) => {
-  //     try {
-  //       return JSON.parse(json);
-  //     } catch (error) {
-  //       return null;
-  //     }
-  //   };
-
-  //   console.log(localStorage.getItem("users"));
-  //   //get the user details being requested
-  //   const getUserId = () => {
-  //     return pathname.substring(17, pathname.length);
-  //   };
-  //   const userId = getUserId();
-  //   const users: User[] = parseJSON(localStorage.getItem("users")!);
-  //   const singleUser = users.find(({ id }) => id === userId);
-  //   setUserDetail(singleUser!);
-  // }, []);
 
   return (
     <>
