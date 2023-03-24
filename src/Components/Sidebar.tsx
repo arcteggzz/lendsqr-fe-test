@@ -1,6 +1,5 @@
-import React from "react";
 import styles from "./Sidebar.module.scss";
-import NavLink from "./NavLink";
+import SidebarLink from "./SidebarLink";
 import { useNavigate } from "react-router-dom";
 import Switch_Organization from "../assets/images/sidebar_icons/Switch Organization.png";
 import dropdown_open_icon from "../assets/images/sidebar_icons/dropdown_open_icon.png";
@@ -30,13 +29,13 @@ import log_out from "../assets/images/sidebar_icons/sign-out 1.png";
 const Sidebar = () => {
   const navigate = useNavigate();
 
-  const navLink = {
+  const navLinkSwitchOrganization = {
     image: Switch_Organization,
     location: "Switch Organization",
-    secImage: dropdown_open_icon,
+    dropDownIcon: dropdown_open_icon,
   };
 
-  const navLink2 = {
+  const navLinkDashboard = {
     image: dashboard_icon,
     location: "Dashboard",
   };
@@ -134,7 +133,7 @@ const Sidebar = () => {
     },
   ];
 
-  const navLink3 = {
+  const navLinkLogout = {
     image: log_out,
     location: "Logout",
   };
@@ -147,22 +146,23 @@ const Sidebar = () => {
   return (
     <>
       <div className={styles.Sidebar}>
-        <NavLink navLink={navLink} />
-        <NavLink navLink={navLink2} />
+        <SidebarLink navLink={navLinkSwitchOrganization} />
+        <SidebarLink navLink={navLinkDashboard} />
         <h2>Customers</h2>
         {firstNavLinks.map((item) => {
-          return <NavLink key={item.location} navLink={item} />;
+          return <SidebarLink key={item.location} navLink={item} />;
         })}
         <h2>Businesses</h2>
         {secondNavLinks.map((item) => {
-          return <NavLink key={item.location} navLink={item} />;
+          return <SidebarLink key={item.location} navLink={item} />;
         })}
         <h2>Settings</h2>
         {thirdNavLinks.map((item) => {
-          return <NavLink key={item.location} navLink={item} />;
+          return <SidebarLink key={item.location} navLink={item} />;
         })}
         <div className={styles.logout} onClick={logout}>
-          <NavLink navLink={navLink3} />
+          <SidebarLink navLink={navLinkLogout} />
+          <p className={styles.version}>v1.2.0</p>
         </div>
       </div>
     </>

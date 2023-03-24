@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import InfoCard from "./Components/InfoCard";
 import styles from "./UsersPage.module.scss";
 import active_users_icon from "../../assets/images/active_users_icon.png";
