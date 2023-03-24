@@ -8,7 +8,7 @@
   width: 100%;
   row-gap: 32px;
   height: 100%;
-  padding: 120px 0 0 0;
+  padding: 120px 60px 0 60px;
   @include mobileStyles() {
     padding: 120px 3vw 0 3vw;
     text-align: center;
@@ -33,11 +33,11 @@
   img {
     width: 45vw;
     @include mobileStyles() {
-      width: 80vw;
+      width: 75vw;
       height: auto;
     }
     @include tabletStyles() {
-      width: 50vw;
+      width: 45vw;
       height: auto;
     }
   }
