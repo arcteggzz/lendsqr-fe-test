@@ -1,4 +1,6 @@
+import { useEffect, useRef, useContext } from "react";
 import styles from "./Sidebar.module.scss";
+import { AppContext } from "../context/AppContext";
 import SidebarLink from "./SidebarLink";
 import { useNavigate } from "react-router-dom";
 import Switch_Organization from "../assets/images/sidebar_icons/Switch Organization.png";
@@ -27,7 +29,9 @@ import system_messages from "../assets/images/sidebar_icons/systems_messages.png
 import log_out from "../assets/images/sidebar_icons/sign-out 1.png";
 
 const Sidebar = () => {
+  let sidebarRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+  const { mobileSidebarOpen, setMobileSidebarOpen } = useContext(AppContext);
 
   const navLinkSwitchOrganization = {
     image: Switch_Organization,
@@ -143,9 +147,22 @@ const Sidebar = () => {
     navigate("/login");
   };
 
+  useEffect(() => {
+    let handler = (e: Event) => {
+      if (!sidebarRef?.current?.contains(e.target as HTMLDivElement))
+        setMobileSidebarOpen(false);
+    };
+
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
+
   return (
     <>
-      <div className={styles.Sidebar}>
+      <div className={styles.Sidebar} ref={sidebarRef}>
         <SidebarLink navLink={navLinkSwitchOrganization} />
         <SidebarLink navLink={navLinkDashboard} />
         <h2>Customers</h2>

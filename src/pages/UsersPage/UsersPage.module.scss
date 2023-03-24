@@ -29,10 +29,6 @@
     justify-content: space-between;
     width: 100%;
     @include tabletStyles() {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      justify-item: center;
-      gap: 20px;
     }
     @include mobileStyles() {
       display: flex;
