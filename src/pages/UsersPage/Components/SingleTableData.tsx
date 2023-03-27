@@ -72,43 +72,43 @@ const SingleTableData = (props: SingleTableDataProps) => {
           <p className={styles.email}>{props.user.email}</p>
           <p className={styles.phoneNumber}>{props.user.phoneNumber}</p>
           <p className={styles.createdAt}>
-            {dateTimeFormatter(props.user.createdAt)}
+            {dateTimeFormatter(props.user.lastActiveDate)}
           </p>
           <div
             className={
-              getCustomerStatus(props.user.createdAt) === "Pending"
+              getCustomerStatus(props.user.lastActiveDate) === "Pending"
                 ? styles.showPending
                 : styles.hideLine
             }
           >
-            {getCustomerStatus(props.user.createdAt)}
+            {getCustomerStatus(props.user.lastActiveDate)}
           </div>
           <div
             className={
-              getCustomerStatus(props.user.createdAt) === "Blacklisted"
+              getCustomerStatus(props.user.lastActiveDate) === "Blacklisted"
                 ? styles.showBlacklisted
                 : styles.hideLine
             }
           >
-            {getCustomerStatus(props.user.createdAt)}
+            {getCustomerStatus(props.user.lastActiveDate)}
           </div>
           <div
             className={
-              getCustomerStatus(props.user.createdAt) === "Active"
+              getCustomerStatus(props.user.lastActiveDate) === "Active"
                 ? styles.showActive
                 : styles.hideLine
             }
           >
-            {getCustomerStatus(props.user.createdAt)}
+            {getCustomerStatus(props.user.lastActiveDate)}
           </div>
           <div
             className={
-              getCustomerStatus(props.user.createdAt) === "Inactive"
+              getCustomerStatus(props.user.lastActiveDate) === "Inactive"
                 ? styles.showInactive
                 : styles.hideLine
             }
           >
-            {getCustomerStatus(props.user.createdAt)}
+            {getCustomerStatus(props.user.lastActiveDate)}
           </div>
         </div>
         <div className={styles.options_icon} onClick={handleOptionsMenu}>
