@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 //Pages
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -14,22 +15,28 @@ import DashboardLayout from "./utils/DashboardLayout";
 import { AppContextProvider } from "./context/AppContext";
 
 const App = () => {
+  const location = useLocation();
   return (
     <>
       <AppContextProvider>
-        <Routes>
-          {/* public routes */}
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            {/* public routes */}
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
 
-          {/* private routes */}
-          <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<ComingSoonPage />} />
-            <Route path="/dashboard/:id" element={<ComingSoonPage />} />
-            <Route path="/dashboard/users" element={<UsersPage />} />
-            <Route path="/dashboard/users/:id" element={<UserDetailsPage />} />
-          </Route>
-        </Routes>
+            {/* private routes */}
+            <Route element={<DashboardLayout />}>
+              <Route path="/dashboard" element={<ComingSoonPage />} />
+              <Route path="/dashboard/:id" element={<ComingSoonPage />} />
+              <Route path="/dashboard/users" element={<UsersPage />} />
+              <Route
+                path="/dashboard/users/:id"
+                element={<UserDetailsPage />}
+              />
+            </Route>
+          </Routes>
+        </AnimatePresence>
       </AppContextProvider>
     </>
   );
