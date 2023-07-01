@@ -4,3 +4,8 @@ export const mockLogin = async () => {
     password: "lendsQrRecruiter",
   };
 };
+
+export const mockLoginDetails = {
+  userName: "recruiter@lendsqr.com",
+  password: "lendsQrRecruiter",
+};
